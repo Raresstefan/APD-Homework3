@@ -1,0 +1,23 @@
+# Tema3
+
+## Task1 & Task3:
+
+Am luat in calcul inca de la inceput ca legatura intre procesul 0 si procesul 1 se anuleaza.
+La inceput fiecare coordonator isi citeste topologia proprie din fisierul asignat lui.
+Procesul 0 va trimite topologia sa catre procesul 3, procesul 3 va trimite catre procesul 2
+topologia procesului 0 si topologia proprie. Analog procesul 2 va trimite cele 3 topologii 
+(pe a lui si cele 2 primite de la procesul 3) catre
+procesul 1. In momentul in care procesul 1 primeste cele trei topologii va trimite inapoi catre procesul 2
+topologia sa. Procesul 2 va trimite pe urma topologia sa si topologia procesului 1 catre procesul 3. Analog procesul 3
+va trimite cele 3 topologii catre procesul 0, iar in acest moment toti coordonatorii vor sti toata topologia structurii,
+urmand ca apoi fiecare coordonator sa-si anunte worker-ii cine este coordonatorul lor si sa le trimita si lor topologia finala.
+
+## Task2
+
+Procesul 0 genereaza vectorul, iar apoi calculeaza pozitiile de start si de end pentru fiecare worker.
+Trimite tot vctorul catre toti worker-ii sai si asteapta pana cand primeste calculele facute de workeri.
+Urmatorul pas este sa trimita vectorul modificat in urma calculelor realizate de workeri catre procesul 3.
+Procesul 3 executa aceiasi pasi si trimite vectorul modificat atat de worker-ii sai cat si de worker-ii
+procesului 0. Aceiasi pasi se executa si de catre procesul 2, iar cand worker-ii procesului 1 termina de realizat calculele
+procesul 1 va avea la indemana vectorul in forma finala dupa realizarea tuturor calculelor. Procesul 1 va trimite vectorul
+in forma finala catre procesul 0 prin procesele 2 si 3, iar cand procesul 0 primeste vectorul il afiseaza.
